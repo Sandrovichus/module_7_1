@@ -31,10 +31,7 @@ class Shop:
                 continue
             else:
                 file = open(self.__file_name, 'a')
-                if len(self.get_products()) == 0:
-                    file.write(f'{str(i)}')
-                else:
-                    file.write(f'\n{str(i)}')
+                file.write(f'{str(i)}\n')
                 file.close()
 
 
