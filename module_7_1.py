@@ -1,6 +1,3 @@
-import os.path
-
-
 class Product:
     def __init__(self, name: str, weight: float, category: str):
         self.name = name
@@ -14,9 +11,8 @@ class Product:
 class Shop:
     def __init__(self):
         self.__file_name = 'products.txt'
-        if not os.path.exists(self.__file_name):
-            file = open(self.__file_name, 'w')
-            file.close()
+        file = open(self.__file_name, 'a')
+        file.close()
 
     def get_products(self) -> str:
         file = open(self.__file_name, 'r')
@@ -39,7 +35,6 @@ s1 = Shop()
 p1 = Product('Potato', 50.5, 'Vegetables')
 p2 = Product('Spaghetti', 3.4, 'Groceries')
 p3 = Product('Potato', 5.5, 'Vegetables')
-
 
 print(p2)  # __str__
 
